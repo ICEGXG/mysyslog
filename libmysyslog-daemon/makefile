@@ -4,10 +4,10 @@ LDFLAGS = -L/home/ice/mysyslog/libmysyslog -L/home/ice/mysyslog/libmysyslog-text
 
 all: libmysyslog-daemon
 
-mysyslog-daemon: libmysyslog-daemon.o
+libmysyslog-daemon: libmysyslog-daemon.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-mysyslog-daemon.o: libmysyslog-daemon.c
+libmysyslog-daemon.o: libmysyslog-daemon.c
 	$(CC) $(CFLAGS) -c $<
 
 run: libmysyslog-daemon
